@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const useApp = () => {
   const [usersByPage, setUsersByPage] = useState({})
@@ -68,26 +68,21 @@ export const useApp = () => {
     loading,
   }
 
-  return {
+  const userProps = {
     usersByPage,
-    setUsersByPage,
     loading,
-    setLoading,
     error,
-    setError,
     page,
     setPage,
     totalPages,
-    setTotalPages,
-    resultsPerPage,
     filteredUsers,
     setFilteredUsers,
-    searchQuery,
-    setSearchQuery,
-    fetchUsers,
+  }
+
+  return {
     appStyles,
     containerStyles,
-    handleSearch,
     usersFilterProps,
+    userProps,
   }
 }
